@@ -1,4 +1,4 @@
-# Fresh Tomatoes Favorite Movies Project
+# Pooglia's Movie Trailers
 
 To run this program and see a list of Pooglia's favorite movies:
 
