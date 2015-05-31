@@ -14,8 +14,8 @@ If Python is not installed at all, see the documentation here: https://www.pytho
 <h3>Clone the Repository</h3>
 Once you are sure Python 2.7 is installed correctly execute the following:
 
-$ git clone https://github.com/p00gz/udacity-nanodegree.git<br>
-$ cd udacity-nanodegree/full-stack-foundations/programming-foundations-python/movie-db
+$ git clone https://github.com/p00gz/udacity-movie-trailer-website.git<br>
+$ cd udacity-movie-trailer-website
 
 <h3>Execute the program:</h3>
 $ python entertainment.py
