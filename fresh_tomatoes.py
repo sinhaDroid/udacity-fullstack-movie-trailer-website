@@ -169,15 +169,17 @@ movie_tile_content = '''
 
 '''
 
+
 def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
 
     content = ''
     for movie in movies:
-        if movie.criterion == False:
+        if movie.criterion is False:
             '''
-            if conditional will insert tiny 1x1 pixel transparent image as a placeholder that will be
-            rendered by the HTML template when there is a False boolean present for movie.criterion
+            if conditional will insert tiny 1x1 pixel transparent image as a
+            placeholder that will be rendered by the HTML template when there
+            is a False boolean present for movie.criterion
             '''
             movie.criterion_icon = "https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png"
 
@@ -202,7 +204,10 @@ def create_movie_tiles_content(movies):
             else conditional will insert the Criterion logo image that will be
             rendered by the HTML template when there is a True boolean present for movie.criterion
             '''
-            movie.criterion_icon = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/The_Criterion_Collection_Logo.svg/63px-The_Criterion_Collection_Logo.svg.png"
+            movie.criterion_icon = ("https://upload.wikimedia.org/"
+                                    "wikipedia/commons/thumb/5/5d/"
+                                    "The_Criterion_Collection_Logo.svg/"
+                                    "63px-The_Criterion_Collection_Logo.svg.png")
 
             youtube_id_match = re.search(r'(?<=v=)[^&#]+', movie.trailer_url)
             youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', movie.trailer_url)
@@ -222,17 +227,18 @@ def create_movie_tiles_content(movies):
 
     return content
 
+
 def open_movies_page(movies):
-  # Create or overwrite the output file
-  output_file = open('fresh_tomatoes.html', 'w')
+    # Create or overwrite the output file
+    output_file = open('fresh_tomatoes.html', 'w')
 
-  # Replace the placeholder for the movie tiles with the actual dynamically generated content
-  rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
+    # Replace the placeholder for the movie tiles with the actual dynamically generated content
+    rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
 
-  # Output the file
-  output_file.write(main_page_head + rendered_content)
-  output_file.close()
+    # Output the file
+    output_file.write(main_page_head + rendered_content)
+    output_file.close()
 
-  # open the output file in the browser
-  url = os.path.abspath(output_file.name)
-  webbrowser.open('file://' + url, new=2) # open in a new tab, if possible
+    # open the output file in the browser
+    url = os.path.abspath(output_file.name)
+    webbrowser.open('file://' + url, new=2)  # open in a new tab, if possible

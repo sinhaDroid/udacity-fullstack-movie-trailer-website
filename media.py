@@ -1,6 +1,8 @@
 """
-this module contains the movie class that will be used in the entertainment_center.py file
+this module contains the movie class that will be used in the
+entertainment_center.py file
 """
+
 
 class Movie():
 
@@ -21,11 +23,13 @@ class Movie():
     release:
         must be the integer year in the following format 'yyyy'
     criterion:
-        if the movie is a criterion release value should be boolen True, else False
+        if the movie is a criterion release value should be boolen True,
+        else False
     criterion_icon:
-        should be set to a null object value. this will be overwritten in the fresh_tomatoes.py
-        file module based on the criterion boolean value and will display the criterion logo
-        next to the year attribute in the movie tile.
+        should be set to a null object value. this will be overwritten in the
+        fresh_tomatoes.py file module based on the criterion boolean value and
+        will display the criterion logo next to the year attribute in the
+        movie tile.
     """
     def __init__(self, title, art, trailer, director, actors, release, criterion, criterion_icon):
         self.title = title
